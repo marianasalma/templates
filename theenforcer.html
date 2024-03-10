@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css?family=Plus Jakarta Sans" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            background-color: #F7F9FB;
+            /* Set the background color here */
+        }
+
+
+        .section-scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Ensure scrolling is still possible */
+        .section-scroll-container {
+            overflow-x: auto;
+            /* Allow horizontal overflow */
+            overflow-y: hidden;
+            white-space: nowrap;
+            /* Prevent line breaks */
+        }
+
+        /* Adjust the width of the scrolling wrapper to ensure it exceeds the parent container's width */
+        .scrolling-wrapper-flexbox {
+            display: flex;
+            white-space: nowrap;
+            /* Prevent line breaks */
+            width: max-content;
+            /* Adjust width to fit content */
+        }
+
+        .hero {
+            position: absolute;
+        }
+
+        .hero-content {
+            align-self: flex-start;
+            /* Align the hero content to the start of the cross axis (upwards) */
+            padding-top: 8em;
+        }
+
+        .background-image {
+            /* position: absolute; */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .background-image img {
+            width: 100%;
+            height: 100%;
+            opacity: 0.48;
+        }
+
+        .hero-content {
+            z-index: 1;
+            /* Ensure content is above the background images */
+        }
+
+        .module-border-wrap {
+            width: 300px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.6s;
+            height: 350px;
+            border-radius: 10px;
+        }
+
+        .module-border-wrap:hover .module {
+            transform: rotateY(-180deg);
+        }
+
+        .module-border-wrap:hover .module-back {
+            transform: rotateY(0deg);
+        }
+
+        .module,
+        .module-back {
+            /* border-radius: 10px; */
+            max-width: 300px;
+            height: 350px;
+            background: #F7F9FB;
+            color: white;
+            padding: 2rem;
+            position: absolute;
+            /* width: 364px;
+          height: 396px; */
+            backface-visibility: hidden;
+            transition: transform 0.6s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+            color: white;
+            padding: 10px;
+            border: 3px solid transparent;
+            border-radius: 10px;
+        }
+
+        .module-back {
+            transform: rotateY(180deg);
+        }
+    </style>
+    <title>Brand Checkup</title>
+</head>
+
+<body style="font-family: 'Plus Jakarta Sans', sans-serif">
+    <!-- navbar -->
+    <div class="navbar text-neutral-content h-[87px] bg-[#111111] px-44">
+        <div class="flex flex-1">
+            <img
+                src="https://file.notion.so/f/f/06c8afe8-baa7-40bf-a5c0-d4a5611cd858/15a6e37c-0b94-46fd-949d-390fff4c7cf7/logo.png?id=3a838776-e28a-4c21-9652-e684c6d72fc5&table=block&spaceId=06c8afe8-baa7-40bf-a5c0-d4a5611cd858&expirationTimestamp=1710079200000&signature=-ib-8pjfBUuZxNrTARjnrBeqrqNh3G6XlKXxfVDJGkA&downloadName=logo.png" />
+        </div>
+        <div class="flex flex-1 justify-around text-base" style="font-weight: 500; color: white">
+            <ul>
+                <li><a href="default.asp">Founder Archetype</a></li>
+            </ul>
+            <ul>
+                <li><a href="default.asp">Blueprint Program</a></li>
+            </ul>
+            <ul>
+                <li><a href="default.asp">Career</a></li>
+            </ul>
+            <ul>
+                <button class="btn text-base" style="background-color: #1f6dff; font-weight: 500; color: white">
+                    Login
+                </button>
+            </ul>
+        </div>
+    </div>
+
+    <div
+        style="width: 100%; height: 100%; flex-direction: column; justify-content: flex-start; align-items: center; gap: 95px; display: inline-flex">
+        <img style="width: 1728px; background: linear-gradient(0deg, #F7F9FB 0%, #F7F9FB 100%)"
+            src="https://mariananana.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F2e957a61-4f9c-4192-a472-16deaf327b77%2F3b470c3b-1963-43bc-8bf2-294e17b121e1%2FEnforcer.png?table=block&id=aa9b7437-7aa3-44d3-bc09-df10a5d65bd9&spaceId=2e957a61-4f9c-4192-a472-16deaf327b77&width=2000&userId=&cache=v2" />
+        <div
+            style="align-self: stretch; height: 774.69px; padding-left: 200px; padding-right: 200px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 48px; display: flex">
+            <div
+                style="flex-direction: column; justify-content: flex-start; align-items: center; gap: 14px; display: flex">
+                <div
+                    style="text-align: center; color: rgba(15, 22, 32, 0.80); font-size: 36px; font-family: Plus Jakarta Sans; font-weight: 700; word-wrap: break-word">
+                    The Wizard</div>
+                <div style="text-align: center"><span
+                        style="color: rgba(15, 22, 32, 0.80); font-size: 48px; font-family: Plus Jakarta Sans; font-weight: 700; word-wrap: break-word">Kepribadian
+                        si </span><span
+                        style="color: #B31515; font-size: 48px; font-family: Plus Jakarta Sans; font-weight: 700; word-wrap: break-word">Innovator-Connector</span>
+                </div>
+            </div>
+            <div
+                style="width: 100%; height: 100%; padding-left: 36px; padding-right: 36px; padding-top: 48px; padding-bottom: 48px; background: rgba(255, 255, 255, 0.50); border-radius: 32px; overflow: hidden; border: 2px #F70707 solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 40px; display: inline-flex">
+                <div style="color: #111111; font-size: 36px; font-family: Plus Jakarta Sans; font-weight: 700; line-height:
+                54px; word-wrap: break-word">
+                    Description</div>
+                <div style="align-self: stretch"><span
+                        style="color: #0F1620; font-size: 16px; font-family: Plus Jakarta Sans; font-weight: 400; line-height: 22.40px; word-wrap: break-word">
+                        THE ENFORCER is a dynamic entrepreneur who excels in building and leveraging networks for
+                        success. They prioritize building strong relationships and creating mutually beneficial
+                        partnerships. Their strength lies not only in their innovative ideas but also in the strategic
+                        alliances they forge.<br /><br /></span><span
+                        style="color: #0F1620; font-size: 16px; font-family: Plus Jakarta Sans; font-weight: 700; line-height: 22.40px; word-wrap: break-word">Examples
+                        of Entrepreneur: Richard Branson (Virgin Group)</span><span
+                        style="color: #0F1620; font-size: 16px; font-family: Plus Jakarta Sans; font-weight: 400; line-height: 22.40px; word-wrap: break-word">:
+                        Known for his extensive network and ability to form strategic partnerships across various
+                        industries, from music to airlines.</span></div>
+            </div>
+            <div
+                style="align-self: stretch; height: 259.69px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 20px; display: flex">
+                <div
+                    style="align-self: stretch; justify-content: flex-start; align-items: flex-start; gap: 25px; display: inline-flex">
+                    <div
+                        style="flex: 1 1 0; height: 109.69px; padding: 25px; background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0) 100%); box-shadow: 0px -10px 20px rgba(109, 40, 217, 0.05); border-radius: 12.55px; overflow: hidden; border: 2.09px rgba(255, 255, 255, 0.24) solid; justify-content: flex-start; align-items: flex-start; gap: 30px; display: flex">
+                        <img style="width: 60px; height: 59.69px"
+                            src="https://mariananana.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F2e957a61-4f9c-4192-a472-16deaf327b77%2Ff9234d52-7885-4393-8a30-83d956d470ec%2Fstrength_(5).png?table=block&id=04680ced-6843-40eb-b2b4-7f7904f54a92&spaceId=2e957a61-4f9c-4192-a472-16deaf327b77&width=380&userId=&cache=v2" />
+                        <div
+                            style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+                            <div
+                                style="align-self: stretch; color: rgba(28, 28, 28, 0.80); font-size: 20.92px; font-family: Plus Jakarta Sans; font-weight: 700; line-height: 28.24px; word-wrap: break-word">
+                                Strength</div>
+                            <div
+                                style="align-self: stretch; opacity: 0.80; color: rgba(28, 28, 28, 0.80); font-size: 14px; font-family: Plus Jakarta Sans; font-weight: 400; line-height: 21px; word-wrap: break-word">
+                                Strong networking and relationship-building skills, fostering collaborations and
+                                partnerships</div>
+                        </div>
+                    </div>
+                    <div
+                        style="flex: 1 1 0; height: 109.69px; padding: 25px; background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0) 100%); box-shadow: 0px -10px 20px rgba(109, 40, 217, 0.05); border-radius: 16px; overflow: hidden; border: 2.09px rgba(255, 255, 255, 0.24) solid; justify-content: flex-start; align-items: flex-start; gap: 30px; display: flex">
+                        <img style="width: 60px; height: 59.69px"
+                            src="https://mariananana.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F2e957a61-4f9c-4192-a472-16deaf327b77%2F277a331e-6b5a-4523-b40b-0a47f7bca8b8%2Fweakness_(3).png?table=block&id=21e232f7-0b42-43b4-8538-15239b05d1de&spaceId=2e957a61-4f9c-4192-a472-16deaf327b77&width=380&userId=&cache=v2" />
+                        <div
+                            style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+                            <div
+                                style="color: rgba(28, 28, 28, 0.80); font-size: 20.92px; font-family: Plus Jakarta Sans; font-weight: 700; line-height: 28.24px; word-wrap: break-word">
+                                Weakness</div>
+                            <div
+                                style="align-self: stretch; opacity: 0.80; color: rgba(28, 28, 28, 0.80); font-size: 14px; font-family: Plus Jakarta Sans; font-weight: 400; line-height: 21px; word-wrap: break-word">
+                                Heavily relies on the strength of their networks, Lack of emphasis on strategic
+                                direction
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    style="align-self: stretch; justify-content: flex-start; align-items: flex-start; gap: 25px; display: inline-flex">
+                    <div
+                        style="flex: 1 1 0; height: 109.69px; padding: 25px; background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0) 100%); box-shadow: 0px -10px 20px rgba(109, 40, 217, 0.05); border-radius: 12.55px; overflow: hidden; border: 2.09px rgba(255, 255, 255, 0.24) solid; justify-content: flex-start; align-items: flex-start; gap: 30px; display: flex">
+                        <img style="width: 60px; height: 59.69px"
+                            src="https://mariananana.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F2e957a61-4f9c-4192-a472-16deaf327b77%2Fbd4ca73e-e915-40be-84f3-4e8d6b9955ff%2Fopportunity_(3).png?table=block&id=e6e0dc52-d612-4cc7-909a-e1b94adb6a37&spaceId=2e957a61-4f9c-4192-a472-16deaf327b77&width=380&userId=&cache=v2" />
+                        <div
+                            style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+                            <div
+                                style="color: rgba(28, 28, 28, 0.80); font-size: 20.92px; font-family: Plus Jakarta Sans; font-weight: 700; line-height: 28.24px; word-wrap: break-word">
+                                Opportunity</div>
+                            <div
+                                style="align-self: stretch; opacity: 0.80; color: rgba(28, 28, 28, 0.80); font-size: 14px; font-family: Plus Jakarta Sans; font-weight: 400; line-height: 21px; word-wrap: break-word">
+                                Forming partnerships to drive innovation, becoming a key influencer and thought leader
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        style="flex: 1 1 0; height: 130px; padding: 25px; background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0) 100%); box-shadow: 0px -10px 20px rgba(109, 40, 217, 0.05); border-radius: 16px; overflow: hidden; border: 2.09px rgba(255, 255, 255, 0.24) solid; justify-content: flex-start; align-items: flex-start; gap: 30px; display: flex">
+                        <img style="width: 60px; height: 59.69px"
+                            src="https://mariananana.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F2e957a61-4f9c-4192-a472-16deaf327b77%2F82f65d30-e3bc-4a13-8d8c-45807756fe45%2Fthreats_(3).png?table=block&id=257a4c26-ea17-413d-aee9-1af5f7796c8d&spaceId=2e957a61-4f9c-4192-a472-16deaf327b77&width=380&userId=&cache=v2" />
+                        <div
+                            style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+                            <div
+                                style="color: rgba(28, 28, 28, 0.80); font-size: 20.92px; font-family: Plus Jakarta Sans; font-weight: 700; line-height: 28.24px; word-wrap: break-word">
+                                Threats</div>
+                            <div
+                                style="align-self: stretch; opacity: 0.80; color: rgba(28, 28, 28, 0.80); font-size: 14px; font-family: Plus Jakarta Sans; font-weight: 400; line-height: 21px; word-wrap: break-word">
+                                Dependence on networks may become a weakness if connections weaken</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            style="width: 1727px; height: 557px; padding: 10px; background: linear-gradient(15deg, #B31515 0%, rgba(255, 255, 255, 0) 100%); flex-direction: column; justify-content: center; align-items: center; gap: 10px; display: flex">
+            <div style="width: 1180px; justify-content: center; align-items: center; gap: 106px; display: inline-flex">
+                <div
+                    style="width: 281.81px; height: 270.92px; transform: rotate(-2.97deg); transform-origin: 0 0; justify-content: center; align-items: center; display: flex">
+                    <img style="width: 336.86px; height: 336.86px"
+                        src="https://mariananana.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F2e957a61-4f9c-4192-a472-16deaf327b77%2F775d4d23-0bd6-4d86-ba8d-6de817906a6a%2FMail.png?table=block&id=d88550ad-ff70-41cc-bb09-41e665f1fc57&spaceId=2e957a61-4f9c-4192-a472-16deaf327b77&width=1770&userId=&cache=v2" />
+                </div>
+                <div
+                    style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 15px; display: inline-flex">
+                    <div
+                        style="align-self: stretch; color: #0F1620; font-size: 48px; font-family: Plus Jakarta Sans; font-weight: 700; word-wrap: break-word">
+                        Bagikan hasil</div>
+                    <div style="align-self: stretch"><span
+                            style="color: #0F1620; font-size: 20px; font-family: Plus Jakarta Sans; font-weight: 400; word-wrap: break-word">Yuk,
+                            download poster hasil asesmenmu dan bagikan ke media sosial! <br />Pamerkan kepribadianmu
+                            dan tunjukkan kepada dunia bakat dan potensimu sebagai </span><span
+                            style="color: #0F1620; font-size: 20px; font-family: Plus Jakarta Sans; font-style: italic; font-weight: 400; word-wrap: break-word">entrepreneur</span><span
+                            style="color: #0F1620; font-size: 20px; font-family: Plus Jakarta Sans; font-weight: 400; word-wrap: break-word">.
+                            Bagikan di Instagram, Facebook, X (Twitter), atau LinkedIn</span></div>
+                    <div
+                        style="height: 69.02px; justify-content: flex-start; align-items: center; gap: 12.96px; display: inline-flex">
+                        <div
+                            style="padding-left: 20.74px; padding-right: 20.74px; padding-top: 10.37px; padding-bottom: 10.37px; background: #A627BB; border-radius: 5.19px; overflow: hidden; justify-content: flex-start; align-items: center; display: flex">
+                            <div
+                                style="text-align: center; color: white; font-size: 20.74px; font-family: Inter; font-weight: 500; line-height: 31.11px; word-wrap: break-word">
+                                Download as image</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer p-10 bg-neutral text-neutral-content px-44 text-white bg-[#111111] pt-20 pb-20">
+        <nav>
+            <img
+                src="https://assets-global.website-files.com/64e724c9819e87ea6077c08a/65295b854c43f5d22dbfba99_Sevenpreneur_Logo.svg" />
+        </nav>
+        <nav class="gap-4">
+            <h6 style="font-weight: bold; font-size: 20px">Contact Info</h6>
+            <a class="link link-hover">WhatsApp</a>
+            <a class="link link-hover">Email</a>
+        </nav>
+        <nav class="gap-4">
+            <h6 style="font-weight: bold; font-size: 20px">Explore</h6>
+            <a class="link link-hover">Blueprint Program</a>
+            <a class="link link-hover">Founder Archetype</a>
+        </nav>
+        <nav class="gap-4">
+            <h6 style="font-weight: bold; font-size: 20px">Follow Us</h6>
+            <a class="link link-hover">Instagram</a>
+            <a class="link link-hover">LinkedIn</a>
+            <a class="link link-hover">Telegram</a>
+        </nav>
+    </footer>
+</body>
+
+</html>
